@@ -121,7 +121,7 @@ public class AddClient extends JFrame implements ActionListener {
             try {
                 Conn conn = new Conn();
                 String query = "insert into client values('" + name + "', '" + dob + "', '" + membershipID + "', '"
-                        + contact + "', '" + email + "'" + address + "')";
+                        + contact + "', '" + email + "', '" + address + "')";
                 conn.s.executeUpdate(query);
                 JOptionPane.showMessageDialog(null, "Details added successfully.");
                 setVisible(false);
