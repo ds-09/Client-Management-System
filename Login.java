@@ -33,7 +33,6 @@ public class Login extends JFrame implements ActionListener {
         login.setBounds(100, 140, 150, 30);
         login.setBackground(Color.BLACK);
         login.setForeground(Color.WHITE);
-        login.addActionListener(this);
         login.addActionListener(this); // goes into actionPerfromed meth
         add(login);
 
@@ -42,8 +41,27 @@ public class Login extends JFrame implements ActionListener {
         setVisible(true);
     }
 
-    public void actionPerformed(Action ae) {
+    public void actionPerformed(ActionEvent ae) {
 
+        try {
+            String username = tfUsername.getText();
+            String password = tfPassword.getText();
+
+            // checking login credentials
+            Conn c = new Conn();
+            String query = "select * from login where username= '" + username + "' and password = '" + password + "'";
+
+            ResultSet rs = c.s.executeQuery(query); // calls statement s through connectivity obj c, store in rs
+            if (rs.next()) { // to check value in rs
+                setVisible(false);
+                new Splash();
+            } else {
+                JOptionPane.showMessageDialog(null, "Invalid username or password.");
+                setVisible(false);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String args[]) {
