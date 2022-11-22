@@ -9,8 +9,8 @@ public class Splash extends JFrame
         implements ActionListener {
 
     Splash() {
-        getContentPane().setBackground(Color.BLACK);
-        setLayout(null);
+        getContentPane().setBackground(Color.BLACK); // layer to add obj
+        setLayout(null); // layout of container- JFrame
 
         // heading
         JLabel heading = new JLabel("Client Management System");
@@ -18,7 +18,7 @@ public class Splash extends JFrame
         heading.setFont(new Font("serif", Font.PLAIN, 60));
         heading.setForeground(Color.WHITE);
         add(heading);
-        ImageIcon i1 = new ImageIcon("Project/icons/home.png"); // get image
+        ImageIcon i1 = new ImageIcon("Project/icons/splash.png"); // get image
         Image i2 = i1.getImage().getScaledInstance(650, 300, Image.SCALE_DEFAULT); // returns Image class obj
         ImageIcon i3 = new ImageIcon(i2); // image to ImageIcon
         JLabel image = new JLabel(i3);
@@ -42,7 +42,7 @@ public class Splash extends JFrame
         }
     }
 
-    public void actionPerformed(Action ae) {
+    public void actionPerformed(ActionEvent ae) {
         setVisible(false);
         new Login();
     }
@@ -51,11 +51,4 @@ public class Splash extends JFrame
         new Splash();
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        setVisible(false);
-        new Login();
-        // TODO Auto-generated method stub
-
-    }
 }
