@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 
 public class Splash extends JFrame
         implements ActionListener {
-
     Splash() {
         getContentPane().setBackground(Color.BLACK); // layer to add obj
         setLayout(null); // layout of container- JFrame
@@ -24,22 +23,16 @@ public class Splash extends JFrame
         JLabel image = new JLabel(i3);
         image.setBounds(50, 100, 1050, 350); // left,top,len,width
         add(image);
-
         JButton click = new JButton("CLICK HERE");
         click.setBounds(100, 150, 200, 50);
         click.setBackground(Color.WHITE);
         click.setForeground(Color.BLACK);
         click.addActionListener(this);
         image.add(click);
-
         // screen
         setSize(900, 500);
         setLocation(200, 70);
         setVisible(true);
-
-        while (true) {
-
-        }
     }
 
     public void actionPerformed(ActionEvent ae) {
@@ -50,5 +43,4 @@ public class Splash extends JFrame
     public static void main(String args[]) {
         new Splash();
     }
-
 }
